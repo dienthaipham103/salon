@@ -7,24 +7,10 @@ import { Typography } from '@mui/material';
 import { useParams, useNavigate } from 'react-router-dom';
 
 const TITLES = {'signup': 'Sign up', 'login': 'Log in'};
-const BOX_INFO = [
-    {
-        title: 'For everyone',
-        text: 'Book salons and spas near you',
-        color: '#000',
-        backgroundColor: '#fff'
-    },
-    {
-        title: 'For businesses',
-        text: 'Manage and grow your business',
-        color: '#fff',
-        backgroundColor: '#000'
-    },
-]
 
-function UserTypeBox({title, text, color, backgroundColor}) {
+function UserTypeBox({title, text, color, backgroundColor, handleClick}) {
     return (
-        <Box component='div' className='userType-box' sx={{backgroundColor: backgroundColor}}>
+        <Box component='div' className='userType-box' sx={{backgroundColor: backgroundColor}} onClick={handleClick}>
             <Box component='div' sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: color}}>
                 <Box component='div' sx={{textAlign: 'left'}}>
                     <Typography sx={{fontSize: '28px',  fontWeight: 700, lineHeight: '32px'}}>
@@ -41,6 +27,27 @@ function UserTypeBox({title, text, color, backgroundColor}) {
 function SwitchUserType(props) {
     const params = useParams();
     const navigate = useNavigate();
+
+    const BOX_INFO = [
+        {
+            title: 'For everyone',
+            text: 'Book salons and spas near you',
+            color: '#000',
+            backgroundColor: '#fff',
+            handleClick: function() {
+                navigate('/login');
+            }
+        },
+        {
+            title: 'For businesses',
+            text: 'Manage and grow your business',
+            color: '#fff',
+            backgroundColor: '#000',
+            handleClick: function() {
+                window.location.href = 'http://localhost:3006/users/login';
+            }
+        },
+    ]
 
     return (
         <Box component="div" className='switchUser-wrapper'>

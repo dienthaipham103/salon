@@ -1,0 +1,34 @@
+.login-wrapper {
+    background-color: #f2f2f7;
+    min-height: 100vh;
+    padding: 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-content {
+    width: 456px;
+
+    &__appName {
+        position: relative;
+        margin-bottom: 20px;
+    }
+    &__loginType {
+        // height: 200px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: rgb(16 25 40 / 8%) 0px 4px 8px 0px;
+        padding: 24px 40px;
+    }
+}
+
+.loginType-buttonWrapper {
+    margin: 24px 0;
+}
+
+.noAccount-text {
+    text-align: center;
+    color: rgb(135, 140, 147);
+}
